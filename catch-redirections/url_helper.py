@@ -16,4 +16,7 @@ def url_postprocessing(redirects):
    for link in redirects:
        if not any(map(link.__contains__, words_for_remove)):
            processed_redirects.append(link)
+
+   if "captcha" in processed_redirects[-1]:
+       processed_redirects.append("Captcha Error")
    return processed_redirects
